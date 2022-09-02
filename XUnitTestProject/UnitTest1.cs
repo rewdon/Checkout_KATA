@@ -53,7 +53,7 @@ namespace XUnitTestProject
             checkout.SetUpOffer(offerA99);
             checkout.SetUpOffer(offerB15);
 
-            Assert.Equal(1.4m, checkout.Total());
+            Assert.Equal(0.6m, checkout.Total());
         }
 
     }

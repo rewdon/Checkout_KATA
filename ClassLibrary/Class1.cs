@@ -59,7 +59,27 @@
             }
             else return false;
         }
+
+        public decimal GetOfferPrice(string sku)
+        {
+            var offerPrice =
+             (from item in offersList
+              where item.SKU == sku
+              select new { item.OfferPrice }).Single();
+            return offerPrice.OfferPrice;
+        }
+
+        public int GetOfferQuantity(string sku)
+        {
+            var offerQuantity =
+                (from item in offersList
+                 where item.SKU == sku
+                 select new { item.OfferQuantity }).Single();
+            return offerQuantity.OfferQuantity;
+        }
     }
+
+        
 
     public class Item
     {
