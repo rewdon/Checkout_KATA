@@ -52,4 +52,15 @@
         public decimal OfferPrice { get; }
     }
 
+    public class TransactionLines
+    {
+
+        public TransactionLines() { }
+
+        public string ProductSKU { get; set; }
+        public decimal ProductUnitPrice { get; set; }
+        public int ProductQuantity { get; set; }
+    }
+
+
 }
