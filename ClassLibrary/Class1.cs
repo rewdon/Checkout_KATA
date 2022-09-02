@@ -32,4 +32,18 @@
         public decimal Price { get; set; }
     }
 
+
+    public class Offers
+    {
+        public Offers(string sku, int offerQuantity, decimal offerPrice)
+        {
+            SKU = sku;
+            OfferQuantity = offerQuantity;
+            OfferPrice = offerPrice;
+        }
+        public string SKU { get; }
+        public int OfferQuantity { get; }
+        public decimal OfferPrice { get; }
+    }
+
 }
