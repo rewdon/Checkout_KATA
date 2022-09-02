@@ -13,9 +13,16 @@
             }
         }
 
-        public class Item
+    public class Item
+    {
+        public Item(string sku, decimal price)
         {
-     
-    
+            SKU = sku;
+            Price = price;
+        }
+
+        public string SKU { get; set; }
+        public decimal Price { get; set; }
+    }
 
 }
