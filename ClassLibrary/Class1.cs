@@ -15,6 +15,11 @@
                                 ProductUnitPrice = tl.First().Price,
                                 ProductQuantity = tl.Count(),
                             }).ToList(); //group item by sku in a transaction
+            
+            
+            
+            
+            
             //foreach(var item in items)
             //{
             //    total = total + item.Price;
@@ -32,6 +37,17 @@
             {
             offersList.Add(offer);
             }
+
+        public bool hasOffer(string sku)//check if a product has offer 
+        {
+            List<string> listSKU = offersList.Select(c => c.SKU).ToList();
+            if (listSKU.Contains(sku))
+            {
+                return true;
+
+            }
+            else return false;
+        }
     }
 
     public class Item
