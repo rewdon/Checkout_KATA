@@ -9,8 +9,8 @@ namespace XUnitTestProject
         private readonly Item itemA99 = new("A99", 0.5m);
         private readonly Item itemB15 = new("B15", 0.3m);
         private readonly Item itemC40 = new("C40", 0.6m);
-        readonly Offers offerA99 = new("A99", 3, 1.3m);
-        readonly Offers offerB15 = new("B15", 2, 0.45m);
+        private readonly Offers offerA99 = new("A99", 3, 1.3m);
+        private readonly Offers offerB15 = new("B15", 2, 0.45m);
 
 
         [Fact]
@@ -64,7 +64,7 @@ namespace XUnitTestProject
             checkout.SetUpOffer(offerB15);
             
 
-            Assert.Equal(1.4m, checkout.Total());
+            Assert.Equal(4.6m, checkout.Total());
         }
 
     }
