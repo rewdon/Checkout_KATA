@@ -3,6 +3,7 @@
     public class Checkout
         {
         private List<Item> items = new List<Item>();
+        public List<Offers> offersList = new List<Offers>();
         public decimal Total()
             {
             decimal total = 0;
@@ -13,12 +14,17 @@
                 return total;
             }
 
-            public void Scan(Item item)
+        public void Scan(Item item)
             {
             items.Add(item);
 
             }
-        }
+
+        public void SetUpOffer(Offers offer)
+            {
+            offersList.Add(offer);
+            }
+    }
 
     public class Item
     {
