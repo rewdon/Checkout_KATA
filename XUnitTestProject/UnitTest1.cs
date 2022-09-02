@@ -5,7 +5,7 @@ namespace XUnitTestProject
         [Fact]
         public void Test1()
         {
-
+            Assert.True(true);//testing the test project 
         }
     }
 }
