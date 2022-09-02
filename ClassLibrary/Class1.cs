@@ -15,17 +15,28 @@
                                 ProductUnitPrice = tl.First().Price,
                                 ProductQuantity = tl.Count(),
                             }).ToList(); //group item by sku in a transaction
-            
-            
-            
-            
-            
+
             //foreach(var item in items)
             //{
             //    total = total + item.Price;
             //}
-            return total;
+            foreach (var product in transactionLines)
+            {
+                if (hasOffer(product.ProductSKU))
+                {
+                    
+                }
+                else
+                {
+
+                    total = total + product.ProductQuantity * product.ProductUnitPrice;
+
+                }
+
             }
+
+            return total;
+        }
 
         public void Scan(Item item)
             {
