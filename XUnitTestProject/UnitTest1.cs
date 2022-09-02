@@ -46,7 +46,7 @@ namespace XUnitTestProject
 
             checkout.Scan(item1);
             checkout.Scan(item2);
-            checkout.Scan(item3);
+            checkout.Scan(item3); 
 
             Assert.Equal(1.4m, checkout.Total());
         }
