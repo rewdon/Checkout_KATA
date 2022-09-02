@@ -7,6 +7,8 @@ namespace XUnitTestProject
     public class UnitTest1
     {
         private readonly Item itemA99 = new("A99", 0.5m);
+        private readonly Item itemB15 = new("B15", 0.3m);
+        private readonly Item itemC40 = new("C40", 0.6m);
 
 
         [Fact]
@@ -39,10 +41,14 @@ namespace XUnitTestProject
         {
             var checkout = new Checkout();
             var item1 = itemA99;
+            var item2 = itemB15;
+            var item3 = itemC40;
 
             checkout.Scan(item1);
+            checkout.Scan(item2);
+            checkout.Scan(item3);
 
-            Assert.Equal(0.5m, checkout.Total());
+            Assert.Equal(1.4m, checkout.Total());
         }
 
     }
