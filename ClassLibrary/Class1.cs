@@ -1,14 +1,21 @@
 ﻿namespace ClassLibrary
 {
-        public class Checkout
+    public class Checkout
         {
-            public decimal Total()
+        private List<Item> items = new List<Item>();
+        public decimal Total()
             {
-                return 0m;
+            decimal total = 0;
+            foreach(var item in items)
+            {
+                total = total + item.Price;
+            }
+                return total;
             }
 
             public void Scan(Item item)
             {
+            items.Add(item);
 
             }
         }
