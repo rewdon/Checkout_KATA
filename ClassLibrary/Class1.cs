@@ -24,7 +24,14 @@
             {
                 if (hasOffer(product.ProductSKU))
                 {
-                    
+                    int totalQuantity = product.ProductQuantity;
+                    decimal unitPrice = product.ProductUnitPrice;
+                    decimal ProductOfferPrice = GetOfferPrice(product.ProductSKU);
+                    int ProductOfferQuantity = GetOfferQuantity(product.ProductSKU);
+                    int PackQuantity = (totalQuantity - (totalQuantity % ProductOfferQuantity)) / ProductOfferQuantity;
+                    int singleQuantity = totalQuantity % ProductOfferQuantity;
+
+                    total = total + PackQuantity * ProductOfferPrice + singleQuantity * unitPrice;
                 }
                 else
                 {
