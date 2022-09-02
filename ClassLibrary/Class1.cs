@@ -7,11 +7,19 @@
         public decimal Total()
             {
             decimal total = 0;
-            foreach(var item in items)
-            {
-                total = total + item.Price;
-            }
-                return total;
+            List<TransactionLines> transactionLines = items
+                            .GroupBy(p => p.SKU)
+                            .Select(tl => new TransactionLines
+                            {
+                                ProductSKU = tl.First().SKU,
+                                ProductUnitPrice = tl.First().Price,
+                                ProductQuantity = tl.Count(),
+                            }).ToList(); //group item by sku in a transaction
+            //foreach(var item in items)
+            //{
+            //    total = total + item.Price;
+            //}
+            return total;
             }
 
         public void Scan(Item item)
@@ -54,8 +62,6 @@
 
     public class TransactionLines
     {
-
-        public TransactionLines() { }
 
         public string ProductSKU { get; set; }
         public decimal ProductUnitPrice { get; set; }
