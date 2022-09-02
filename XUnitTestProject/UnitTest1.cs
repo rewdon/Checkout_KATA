@@ -33,5 +33,17 @@ namespace XUnitTestProject
                 () => checkout.Scan(item));//negative test for scan item
         }
 
+
+        [Fact]
+        public void TotalPrice()
+        {
+            var checkout = new Checkout();
+            var item1 = itemA99;
+
+            checkout.Scan(item1);
+
+            Assert.Equal(0.5m, checkout.Total());
+        }
+
     }
 }
